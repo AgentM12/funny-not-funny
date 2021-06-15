@@ -1,0 +1,40 @@
+{
+    "Games": [
+        {
+            "Prompts": [
+                {
+                    "A1_ID": 2,
+                    "A1_VOTES": 0,
+                    "A2_ID": 3,
+                    "A2_VOTES": 1,
+                    "Answer1": "{\"text\":\"3\"}",
+                    "Answer2": "{\"text\":\"4, the back 2 and the front 2\"}",
+                    "P_ID": 1,
+                    "Prompt": "{\"text\":\"How many legs does a centipede actually need?\"}"
+                },
+                {
+                    "A1_ID": 3,
+                    "A1_VOTES": 1,
+                    "A2_ID": 1,
+                    "A2_VOTES": 0,
+                    "Answer1": "{\"text\":\"Call Step Bro\"}",
+                    "Answer2": "{\"text\":\"get out of it\"}",
+                    "P_ID": 2,
+                    "Prompt": "{\"text\":\"What do you do when you're stuck in the washing machine?\"}"
+                },
+                {
+                    "A1_ID": 1,
+                    "A1_VOTES": 1,
+                    "A2_ID": 2,
+                    "A2_VOTES": 0,
+                    "Answer1": "{\"text\":\"my life\"}",
+                    "Answer2": "{\"text\":\"none\"}",
+                    "P_ID": 3,
+                    "Prompt": "{\"text\":\"What is the funniest joke you have ever heard?\"}"
+                }
+            ],
+            "Size": 3
+        }
+    ],
+    "Size": 1
+}

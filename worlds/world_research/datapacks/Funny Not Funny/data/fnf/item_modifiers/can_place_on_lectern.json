@@ -1,0 +1,4 @@
+{
+	"function": "minecraft:set_nbt",
+	"tag": "{FNF_MODIFIED:1,CanPlaceOn:['minecraft:lectern'],title:'Prompt',filtered_title:'Prompt'}"
+}

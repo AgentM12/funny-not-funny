@@ -1,0 +1,26 @@
+
+# Backups and logs
+/backups
+/logs
+
+# Personal Data
+/worlds/world_research/data
+/worlds/world_research/advancements
+/worlds/world_research/playerdata
+/worlds/world_research/stats
+
+# Unnecessary files
+/worlds/world_research/DIM1
+/worlds/world_research/DIM-1
+/worlds/world_research/poi
+/worlds/world_research/level.dat_old
+/worlds/world_research/session.lock
+
+# Server data
+banned-players.json
+banned-ips.json
+ops.json
+server-icon.png
+whitelist.json
+usercache.json
+/worlds/usercache.json

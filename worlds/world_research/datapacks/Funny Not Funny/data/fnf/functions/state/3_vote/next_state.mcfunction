@@ -1,0 +1,2 @@
+execute if score $FNF_PROMPT_COUNT fnf_temp matches 0 run function fnf:state/4_results/transition
+execute unless score $FNF_PROMPT_COUNT fnf_temp matches 0 run function fnf:state/3_vote/get_next_prompt

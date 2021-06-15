@@ -1,0 +1,57 @@
+{
+    "How many legs does a centipede actually need?": {
+        "3": 0,
+        "4, the back 2 and the front 2": 1,
+        "4, the 2 front legs and the 2 back legs": 1,
+        "all 100": 0,
+        "4": 0,
+        "None, there is a thing called a worm": 1
+    },
+    "What do you do when you're stuck in the washing machine?": {
+        "Call Step Bro": 1,
+        "get out of it": 0
+    },
+    "What is the funniest joke you have ever heard?": {
+        "my life": 1,
+        "none": 0
+    },
+    "You can't kill a ___ without leaving ___ behind": {
+        "Bird, Blood": 1
+    },
+    "If you hit this really hard it will squirt ____ out of it!": {
+        "jam": 1,
+        "Mayonnaise": 0
+    },
+    "How many cats does it take to screw in a light bulb?\n\n3!\n1 to ______\nand the other 2 to _____": {
+        "get distracted, actually screw it in": 0,
+        "screw it in, to distract you": 0
+    },
+    "Why does the cat wake you up?": {
+        "Because it loves you!": 1,
+        "Because it can't sleep": 0
+    },
+    "What do you get when you cross an ant and an elephant?": {
+        "an ElephANT": 1,
+        "ElephANT": 0
+    },
+    "This is why I love you:": {
+        "Because of your beautiful smile!": 0,
+        "Your sweet personality <3": 1
+    },
+    "What do you call a butterfly without fat?": {
+        "Margerinefly": 1,
+        "A fly": 0
+    },
+    "Doing this with your family will forever give them a trauma.": {
+        "Watching me watch anime": 0,
+        "funeral home tour": 1
+    },
+    "If your sister does this to you, you will never be able to forgive her for it.": {
+        "take my cat away from me": 1,
+        "Slap me in the face with a stick": 0
+    },
+    "Which family member would you prank?": {
+        "Myself, I do it every day": 1,
+        "My Grandma": 0
+    }
+}

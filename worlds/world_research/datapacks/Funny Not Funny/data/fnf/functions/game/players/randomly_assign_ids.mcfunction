@@ -1,0 +1,1 @@
+execute if score $FNF_TEMP_ID fnf_pid <= $FNF_PLAYERS fnf_game run function fnf:game/players/assign_id
