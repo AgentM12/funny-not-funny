@@ -38,9 +38,14 @@ scoreboard objectives add fnf_temp dummy "Temporary Variables"
 scoreboard objectives add fnf_timer dummy "Timer Variables"
 
 scoreboard objectives add fnf_pid dummy "Player ID"
+scoreboard objectives add fnf_pstate dummy "Player State"
 scoreboard objectives add fnf_int_score dummy "Internal Player Score"
 scoreboard objectives add fnf_disp_score dummy "Score"
 scoreboard objectives add fnf_disp_count dummy "Players"
+scoreboard objectives add fnf_rounds dummy "Rounds Played"
+scoreboard objectives add fnf_spec_rounds dummy "Rounds Spectated"
+scoreboard objectives add fnf_votes_cast dummy "Total Votes Cast"
+scoreboard objectives add fnf_votes_recv dummy "Total Votes Received"
 
 # Non-dummy
 scoreboard objectives add fnf_use_wfstick minecraft.used:minecraft.warped_fungus_on_a_stick

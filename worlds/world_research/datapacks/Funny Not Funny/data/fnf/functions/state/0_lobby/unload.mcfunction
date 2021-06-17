@@ -12,8 +12,12 @@ scoreboard players reset @a fnf_pid
 scoreboard players set $FNF_TEMP_ID fnf_pid 1
 execute as @a[team=fnf_players,sort=random] at @s run function fnf:game/players/assign_id
 
+scoreboard players add @a[tag=fnf_playing] fnf_rounds 1
+
 # Remaining players will be spectating
 execute as @a[tag=!fnf_playing,gamemode=!creative] run function fnf:game/players/force_spectator
+
+scoreboard players add @a[tag=!fnf_playing] fnf_spec_rounds 1
 
 # Can't see nametags while writing prompts...
 team modify fnf_players seeFriendlyInvisibles false

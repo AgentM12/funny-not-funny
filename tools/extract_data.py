@@ -8,9 +8,6 @@ data_location = "data_archive"
 
 save_data_file_location = "data/"
 
-data_titles = ["Prompt", "Answer 1", "Answer 1 Votes", "Answer 2", "Answer 2 Votes"]
-data_keys = ["Prompt", "Answer1", "A1_VOTES", "Answer2", "A2_VOTES"]
-
 
 def extract_game_data():
 	nbt_data = nbt.load_nbt(nbt_location)
@@ -21,6 +18,7 @@ def extract_game_data():
 def clean(data):
 	prompts = {}
 	for game in data['Games']:
+		max_votes = game['MaxVotes'] # The most votes that could be received per prompt in that game. (players + spectators - 2)
 		for prompt in game['Prompts']:
 			try:
 				prompt_key = json.loads(prompt['Prompt'])['text'].strip()
@@ -39,16 +37,20 @@ def clean(data):
 			except:
 				ans2_key = None
 			
-			
+			# Map of prompt -> {max_votes, answers:{...}}
 			if (prompt_key in prompts):
-				if ans1_key is not None: prompts[prompt_key][ans1_key] = prompts[prompt_key].get(ans1_key, 0) + ans1_votes
-				if ans2_key is not None: prompts[prompt_key][ans2_key] = prompts[prompt_key].get(ans2_key, 0) + ans2_votes
+				if ans1_key is not None: prompts[prompt_key]['answers'][ans1_key] = prompts[prompt_key]['answers'].get(ans1_key, 0) + ans1_votes
+				if ans2_key is not None: prompts[prompt_key]['answers'][ans2_key] = prompts[prompt_key]['answers'].get(ans2_key, 0) + ans2_votes
+				prompts[prompt_key]['max_votes'] += max_votes
 			else:
 				answers = {}
 				if ans1_key is not None: answers[ans1_key] = ans1_votes
 				if ans2_key is not None: answers[ans2_key] = ans2_votes
 
-				prompts[prompt_key] = answers
+				prompts[prompt_key] = {}
+				prompts[prompt_key]['answers'] = answers
+				prompts[prompt_key]['max_votes'] = max_votes
+
 			
 	return prompts
 

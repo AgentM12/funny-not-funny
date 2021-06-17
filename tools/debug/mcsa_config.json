@@ -1,5 +1,5 @@
 {
-	"datapack-path": "../worlds/world_research/datapacks",
+	"datapack-path": "../../worlds/world_research/datapacks",
 	"severity": {
 		"call-to-function-not-found": 3,
 		"invalid-function-name": 3

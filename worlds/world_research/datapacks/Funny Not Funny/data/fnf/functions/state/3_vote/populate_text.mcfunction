@@ -6,6 +6,7 @@ execute as @e[type=minecraft:marker,tag=fnf_state_3,tag=fnf_answer_display,tag=f
 tag @a remove fnf_has_voted
 tag @a remove fnf_can_vote
 execute as @a[tag=fnf_playing] unless score @s fnf_pid = $FNF_AUTHOR1 fnf_pid unless score @s fnf_pid = $FNF_AUTHOR2 fnf_pid run tag @s add fnf_can_vote
+tag @a[tag=!fnf_playing,gamemode=adventure] add fnf_can_vote
 
 # Remove the prompts from the copy
 execute if score $FNF_SELECTED fnf_pid matches 0 run data remove storage fnf:game_store PromptsCopy[0]

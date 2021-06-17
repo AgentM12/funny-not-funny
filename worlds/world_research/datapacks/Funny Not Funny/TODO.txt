@@ -1,5 +1,10 @@
- - Save Data - sort of
- - Eval/parse data
+ CRITICAL
+ - Measure engagement (player.data, scoreboards-> rounds played) YES + survey
+ - Measure max votes it could have had (to get a percentage) YES
+ - tp logged off players to proper room (player state) Yes
+ - Spectators can also vote. YES
+
+ Should be done
  - Input prompts when no prompt given/answer - done for prompts, but skip answers :(
  - decorate
- - tp logged off players to proper room (player state)
+ - Eval/parse data

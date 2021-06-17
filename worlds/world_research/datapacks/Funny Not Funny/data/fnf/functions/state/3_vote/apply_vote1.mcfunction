@@ -37,4 +37,6 @@ execute if score $FNF_PID fnf_pid matches 10 store result storage fnf:game_store
 tag @s remove fnf_can_vote
 tag @s add fnf_has_voted
 
+scoreboard players add @s fnf_votes_cast 1
+
 tellraw @s ["",{"text":"You voted for the first answer!","color":"yellow"}]

@@ -1,3 +1,2 @@
 
-tag @a remove fnf_has_voted
-tag @a remove fnf_can_vote
+execute as @a run function fnf:state/3_vote/unload_player_state
