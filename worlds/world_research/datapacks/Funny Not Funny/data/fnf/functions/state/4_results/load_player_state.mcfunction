@@ -16,4 +16,16 @@ scoreboard players operation @s[tag=fnf_playing,scores={fnf_pid=10}] fnf_disp_sc
 
 scoreboard players operation @s[tag=fnf_playing] fnf_votes_recv += @s fnf_disp_score
 
+# Submit head for highscore
+execute if score @s[tag=fnf_playing] fnf_disp_score = $FNF_SCORE_MAX fnf_temp run tag @s add fnf_has_highscore
+
+clear @s[tag=fnf_playing]
+loot replace entity @s[tag=fnf_playing,tag=fnf_has_highscore] armor.head loot fnf:player_head
+
+execute if entity @s[tag=fnf_playing,tag=!fnf_has_submitted_head,tag=fnf_has_highscore] run data modify storage fnf:game_store PlayerHeads append from entity @s Inventory[{Slot:103b}].tag
+execute if entity @s[tag=fnf_playing,tag=!fnf_has_submitted_head,tag=fnf_has_highscore] run scoreboard players add $FNF_WHO_HAS_MAX fnf_temp 1
+tag @s add fnf_has_submitted_head
+
+execute if entity @s[gamemode=spectator] run spectate @r[tag=fnf_playing]
+
 scoreboard players set @s fnf_pstate 4

@@ -1,10 +1,9 @@
  CRITICAL
- - Measure engagement (player.data, scoreboards-> rounds played) YES + survey
- - Measure max votes it could have had (to get a percentage) YES
- - tp logged off players to proper room (player state) Yes
- - Spectators can also vote. YES
+ - Measure engagement (player.data, scoreboards-> rounds played) YES + survey --> gather in data.py YES
+ - tp logged off players to proper room (player state) Yes kind of?
+ - Some rounds should have only existing prompts so they get more answers!
 
  Should be done
  - Input prompts when no prompt given/answer - done for prompts, but skip answers :(
- - decorate
+ - decorate  --- in progress
  - Eval/parse data

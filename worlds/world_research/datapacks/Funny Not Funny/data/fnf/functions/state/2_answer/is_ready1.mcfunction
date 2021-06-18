@@ -20,6 +20,5 @@ tag @s remove fnf_self
 
 setblock ~ ~1 ~ minecraft:stone
 
-
 tag @s remove fnf_waiting
 #tellraw player is ready1..

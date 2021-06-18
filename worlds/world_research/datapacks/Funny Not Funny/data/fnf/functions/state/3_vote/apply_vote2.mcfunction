@@ -39,4 +39,4 @@ tag @s add fnf_has_voted
 
 scoreboard players add @s fnf_votes_cast 1
 
-tellraw @s ["",{"text":"You voted for the second answer!","color":"yellow"}]
+tellraw @a ["",{"selector":"@s"},{"text":" voted for the second answer!"}]

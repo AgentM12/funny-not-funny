@@ -4,6 +4,9 @@
 # Variables
 scoreboard players set $FNF_START_GAME fnf_timer -1
 
+# Options
+
+
 # Constants
 scoreboard players set $FNF_TOPIC_COUNT fnf_const 16
 

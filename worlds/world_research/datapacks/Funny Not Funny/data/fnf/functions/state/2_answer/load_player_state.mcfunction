@@ -9,4 +9,6 @@ execute if score @s[tag=fnf_playing] fnf_pid matches 8 run tp @s @e[type=minecra
 execute if score @s[tag=fnf_playing] fnf_pid matches 9 run tp @s @e[type=minecraft:marker,tag=fnf_state_2,tag=fnf_player_spawn,tag=fnf_p9,tag=fnf_first,limit=1]
 execute if score @s[tag=fnf_playing] fnf_pid matches 10 run tp @s @e[type=minecraft:marker,tag=fnf_state_2,tag=fnf_player_spawn,tag=fnf_p10,tag=fnf_first,limit=1]
 
+execute if entity @s[gamemode=spectator] run spectate @r[tag=fnf_playing]
+
 scoreboard players set @s fnf_pstate 2
