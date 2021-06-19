@@ -1,2 +1,2 @@
-execute if score $FNF_ADMINS_START_GAME fnf_option matches 1 run tellraw @a [{"text":"An admin should start the game by clicking here!","color":"yellow","clickEvent":{"action":"run_command","value":"/function fnf:trigger/start"}}]
+execute if score $FNF_ADMINS_START_GAME fnf_option matches 1 run tellraw @a [{"text":"An admin should start the game by clicking ","color":"yellow"},{"text":"[Here]","color":"light_purple","clickEvent":{"action":"run_command","value":"/function fnf:trigger/start"}}]
 execute if score $FNF_ADMINS_START_GAME fnf_option matches 0 run function fnf:trigger/start

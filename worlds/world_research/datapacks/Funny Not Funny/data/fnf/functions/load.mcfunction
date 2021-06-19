@@ -91,6 +91,8 @@ scoreboard players set @e[tag=fnf_p10] fnf_pid 10
 
 ## Defaults ##
 scoreboard players add $FNF_ADMINS_START_GAME fnf_option 0
+scoreboard players add $FNF_DISABLE_PROMPTS fnf_option 0
+scoreboard players add $FNF_HIDDEN_VOTES fnf_option 0
 
 execute unless score $FNF_INITIALIZED fnf_game matches 1 run function fnf:reset
 

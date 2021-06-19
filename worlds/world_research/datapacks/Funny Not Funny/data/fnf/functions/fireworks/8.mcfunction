@@ -1,0 +1,1 @@
+summon minecraft:firework_rocket ~ ~ ~ {LifeTime:24,FireworksItem:{"Count":1b,"id":"minecraft:firework_rocket","tag":{"RepairCost":0,"Fireworks":{"Flight":1b,"Explosions":[{"Type":2b,"Trail":1b,"Colors":[I;4312372,14188952,5320730],"FadeColors":[I;11743532]}]},"display":{"Name":"{\"text\":\"very nice star\"}"}}}}

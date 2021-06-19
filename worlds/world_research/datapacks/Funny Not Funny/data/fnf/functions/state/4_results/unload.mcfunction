@@ -1,3 +1,5 @@
+time set noon
+
 tag @a remove fnf_has_highscore
 tag @a remove fnf_has_submitted_head
 

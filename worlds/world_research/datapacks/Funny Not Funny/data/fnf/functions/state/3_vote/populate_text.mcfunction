@@ -1,3 +1,6 @@
+title @a[gamemode=adventure] subtitle ["",{"text":"Vote for your favorite!"}]
+title @a[gamemode=adventure] title ["",{"text":"Voting time!"}]
+
 execute as @e[type=minecraft:marker,tag=fnf_state_3,tag=fnf_lectern] at @s run function fnf:state/3_vote/populate_prompt
 execute as @e[type=minecraft:marker,tag=fnf_state_3,tag=fnf_answer_display,tag=fnf_first] at @s run function fnf:state/3_vote/populate_answer1
 execute as @e[type=minecraft:marker,tag=fnf_state_3,tag=fnf_answer_display,tag=fnf_second] at @s run function fnf:state/3_vote/populate_answer2

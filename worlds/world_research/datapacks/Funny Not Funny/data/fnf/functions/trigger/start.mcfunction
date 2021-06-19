@@ -3,3 +3,6 @@ execute if score $FNF_PLAYERS fnf_game > $FNF_MAX_PLAYERS fnf_const run tellraw 
 
 execute if score $FNF_PLAYERS fnf_game >= $FNF_MIN_PLAYERS fnf_const run scoreboard players set $FNF_START_GAME fnf_timer 100
 execute if score $FNF_PLAYERS fnf_game >= $FNF_MIN_PLAYERS fnf_const as @a at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 2 0
+
+execute if score $FNF_ADMINS_START_GAME fnf_option matches 1 run tellraw @a [{"text":"An admin can cancel the game queue by clicking ","color":"yellow"},{"text":"[Here]","color":"light_purple","clickEvent":{"action":"run_command","value":"/function fnf:trigger/cancel_start"}}]
+function fnf:no_feedback

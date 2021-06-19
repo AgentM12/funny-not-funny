@@ -39,4 +39,6 @@ tag @s add fnf_has_voted
 
 scoreboard players add @s fnf_votes_cast 1
 
-tellraw @a ["",{"selector":"@s"},{"text":" voted for the first answer!"}]
+execute if score $FNF_HIDDEN_VOTES fnf_option matches 0 run tellraw @a ["",{"selector":"@s"},{"text":" voted for the first answer!"}]
+execute if score $FNF_HIDDEN_VOTES fnf_option matches 1 run tellraw @s ["",{"text":"You voted for the first answer!"}]
+playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 2 0

@@ -1,3 +1,4 @@
+time set midnight
 
 # Reset head
 tag @s remove fnf_has_submitted_head

@@ -1,4 +1,6 @@
 
+execute if entity @s[tag=!fnf_initialized] run function fnf:game/players/first_join
+
 execute unless score $FNF_STATE fnf_game matches 0 unless score @s fnf_game = $FNF_ID fnf_game run function fnf:game/players/game_id_mismatch
 
 execute if score $FNF_STATE fnf_game matches 0 run function fnf:game/players/return_to_lobby
