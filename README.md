@@ -11,6 +11,13 @@ The goal is to create prompts and answers. Try to come up with the funniest answ
 Note that you might have to port-forward 25565 in case you want to allow incoming external connections.
 
 
+## Options
+These options can be set by an admin to customize the experience:
+ - `/function fnf:_option/admin_start`: Toggles the ability for anyone/only admins to start the game.
+ - `/function fnf:_option/hidden_votes`: Toggles the messages telling who voted for what.
+ - `/function fnf:_option/no_prompts`: Toggles the prompts phase on/off to allow old prompts from re-appearing.
+
+
 ## Debug Info
 
 If there are any bugs in the game, let me know in an issue, or create a pr with a fix.
@@ -20,3 +27,9 @@ tools/debug contains a static analysis tool (mcsa.py) checking for common errors
 
 *Highly technical:*
 In-game you can see `minecraft:marker` entities by tagging yourself with `/tag @s add fnf_show_markers` or remove it with `/tag @s remove fnf_show_markers`
+
+
+## Data 
+The data is stored in the nbt storage `fnf:data_archive`. The game itself uses and modifies `fnf:game_store` for any internal state. Furthermore, player specific stats are stored in the playerdata files within the world.
+
+The data can be extracted using the `extract_data.py` script in `/tools`. This will dettach the player specific stats from any personally identifiable data, however any game data is not cleaned, due to the consequences this could have with regards to modifying data unwantedly.
