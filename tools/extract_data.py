@@ -8,7 +8,7 @@ nbt_location = "../worlds/world_research/data/command_storage_fnf.dat"
 scores_location = "../worlds/world_research/data/scoreboard.dat"
 data_location = "data_archive"
 
-save_data_file_location = "data/"
+save_data_file_location = "../data/"
 
 tracked_scores = {
 	"fnf_rounds": "total_rounds_played",
@@ -69,6 +69,7 @@ def clean(data):
 				if ans2_key is not None: prompts[prompt_key]['answers'][ans2_key] = prompts[prompt_key]['answers'].get(ans2_key, 0) + ans2_votes
 				prompts[prompt_key]['max_votes'] += max_votes
 			else:
+				# Probably want to store data per game anyways so you can deduce a < b in certain scenarios. later deduce b < a means ??
 				answers = {}
 				if ans1_key is not None: answers[ans1_key] = ans1_votes
 				if ans2_key is not None: answers[ans2_key] = ans2_votes
