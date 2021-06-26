@@ -24,16 +24,16 @@ These options can be set by an admin to customize the experience:
  - `/function fnf:_option/hidden_votes`: Toggles the messages telling who voted for what.
  - `/function fnf:_option/no_prompts`: Toggles the prompts phase on/off to allow old prompts from re-appearing.
 
+To add players as admins use `/op <PlayerName>`. Alternatively, you can run the option functions above from the server console directly.
 
 ## Debug Info
 
-If there are any bugs in the game, let me know in an issue, or create a pr with a fix.
+If there are any bugs in the game, let me know in an issue, or create a PR with a fix.
 
 *Code analysis:*
 tools/debug contains a static analysis tool `mcsa.py` that checks for common errors and returns command usage statistics.
 
-*Highly technical:*
-In-game you can see `minecraft:marker` entities by tagging yourself with `/tag @s add fnf_show_markers` or remove it with `/tag @s remove fnf_show_markers`
+*Fixing Game State:* If you get stuck during any game (which shouldn't happen), you could try fixing this by running `/function fnf:state/0_lobby/transition` to transition all online players back to the lobby. You should also run `/reload`. If things don't work, try reinstalling this entire project.
 
 
 ## Data 
