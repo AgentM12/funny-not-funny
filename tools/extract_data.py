@@ -42,53 +42,66 @@ def extract_game_data():
 	return game_data.as_dict()
 
 def clean(data):
-	prompts = {}
+	raw_prompts = {}
+	games = []
 	for game in data['Games']:
 		max_votes = game['MaxVotes'] # The most votes that could be received per prompt in that game. (players + spectators - 2)
+		prompts = []
 		for prompt in game['Prompts']:
 			try:
 				prompt_key = json.loads(prompt['Prompt'])['text'].strip()
 			except:
 				continue
 
-			try:
-				ans1_key = json.loads(prompt['Answer1'])['text'].strip()
-				ans1_votes = int(prompt['A1_VOTES'])
-			except:
-				ans1_key = None
-
-			try:	
-				ans2_key = json.loads(prompt['Answer2'])['text'].strip()
-				ans2_votes = int(prompt['A2_VOTES'])
-			except:
-				ans2_key = None
+			try: ans1_key = json.loads(prompt['Answer1'])['text'].strip()
+			except: ans1_key = ""
 			
-			# Map of prompt -> {max_votes, answers:{...}}
-			if (prompt_key in prompts):
-				if ans1_key is not None: prompts[prompt_key]['answers'][ans1_key] = prompts[prompt_key]['answers'].get(ans1_key, 0) + ans1_votes
-				if ans2_key is not None: prompts[prompt_key]['answers'][ans2_key] = prompts[prompt_key]['answers'].get(ans2_key, 0) + ans2_votes
-				prompts[prompt_key]['max_votes'] += max_votes
-			else:
-				# Probably want to store data per game anyways so you can deduce a < b in certain scenarios. later deduce b < a means ??
-				answers = {}
-				if ans1_key is not None: answers[ans1_key] = ans1_votes
-				if ans2_key is not None: answers[ans2_key] = ans2_votes
+			try: ans1_votes = int(prompt['A1_VOTES'])
+			except: ans1_votes = 0
 
-				prompts[prompt_key] = {}
-				prompts[prompt_key]['answers'] = answers
-				prompts[prompt_key]['max_votes'] = max_votes
+			try: ans2_key = json.loads(prompt['Answer2'])['text'].strip()
+			except: ans2_key = ""
 
+			try: ans2_votes = int(prompt['A2_VOTES'])
+			except: ans2_votes = 0
+
+			if not (prompt_key in raw_prompts):
+				raw_prompts[prompt_key] = {}
+
+			for key, votes in {ans1_key: ans1_votes, ans2_key: ans2_votes}.items():
+				if key is not None:
+					if not (key in raw_prompts[prompt_key]):
+						raw_prompts[prompt_key][key] = []
+					raw_prompts[prompt_key][key].append(f"{votes}/{max_votes}")
 			
-	return prompts
+			prompts.append({
+				'prompt': prompt_key,
+				'answer1': {
+					'text': ans1_key,
+					'votes': ans1_votes
+				},
+				'answer2': {
+					'text': ans2_key,
+					'votes': ans2_votes
+				}
+			})
+
+		games.append({
+			'max_votes_per_round': max_votes,
+			'prompts': prompts
+		})
+			
+	return games, raw_prompts
 
 
 def main():
 	player_stats = extract_stats()
-	cleaned_data = clean(extract_game_data())
+	games, raw_prompts = clean(extract_game_data())
 
 	data = {
 		"player_stats": player_stats,
-		"prompts": cleaned_data
+		"prompts": raw_prompts,
+		"per_game": games
 	}
 	
 	os.makedirs(save_data_file_location, exist_ok=True)
