@@ -5,10 +5,13 @@ The goal is to create prompts and answers. Try to come up with the funniest answ
 
 ## Install Instructions
 1. Simply clone this git repository in an empty directory
-2. Run the server.jar (Minecraft version 1.17, requires Java 16)
+2. Run the `start_server.bat` (Minecraft version 1.17, requires Java 16) or use the command: \
+    ```bat
+    java -Xms2048M -Xmx2048M -jar server.jar --universe worlds --world world_research --port 25565
+    ```
 3. Join the server at your IP address with port 25565
 
-Note that you might have to port-forward 25565 in case you want to allow incoming external connections.
+Note that you may have to port-forward 25565 in case you want to allow incoming external connections.
 
 
 ## Options
