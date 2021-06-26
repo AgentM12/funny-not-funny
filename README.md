@@ -4,6 +4,10 @@ A simple party game for 3-10 players (and any amount of spectators) implemented 
 The goal is to create prompts and answers. Try to come up with the funniest answers to a prompt to get lots of player votes to win.
 
 ## Install Instructions
+**Pre-requisites**: All participating players will need a Minecraft Java Edition account and connect to the server using `Minecraft Java Edition version 1.17`.
+The server host will need `Java 16` as well as at least 4GB RAM and a decent internet connection.
+
+**Steps**:
 1. Simply clone this git repository in an empty directory
 2. Run the `start_server.bat` (Minecraft version 1.17, requires Java 16) or use the command: \
     ```bat
@@ -11,7 +15,7 @@ The goal is to create prompts and answers. Try to come up with the funniest answ
     ```
 3. Join the server at your IP address with port 25565
 
-Note that you may have to port-forward 25565 in case you want to allow incoming external connections.
+**Note** that you may have to port-forward 25565 in case you want to allow incoming external connections.
 
 
 ## Options
@@ -26,7 +30,7 @@ These options can be set by an admin to customize the experience:
 If there are any bugs in the game, let me know in an issue, or create a pr with a fix.
 
 *Code analysis:*
-tools/debug contains a static analysis tool (mcsa.py) checking for common errors and giving command usage statistics.
+tools/debug contains a static analysis tool `mcsa.py` that checks for common errors and returns command usage statistics.
 
 *Highly technical:*
 In-game you can see `minecraft:marker` entities by tagging yourself with `/tag @s add fnf_show_markers` or remove it with `/tag @s remove fnf_show_markers`
@@ -35,4 +39,4 @@ In-game you can see `minecraft:marker` entities by tagging yourself with `/tag @
 ## Data 
 The data is stored in the nbt storage `fnf:data_archive`. The game itself uses and modifies `fnf:game_store` for any internal state. Furthermore, player specific stats are stored in the playerdata files within the world.
 
-The data can be extracted using the `extract_data.py` script in `/tools`. This will dettach the player specific stats from any personally identifiable data, however any game data is not cleaned, due to the consequences this could have with regards to modifying data unwantedly.
+The data can be extracted using the `extract_data.py` script in `/tools`. This will dettach the player specific stats from any personally identifiable data, however any game data is merely extracted and not anonymized in any way due to the potential loss or alteration of critical data.
